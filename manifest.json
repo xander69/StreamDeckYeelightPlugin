@@ -1,0 +1,43 @@
+{
+    "Actions": [
+        {
+            "Icon": "images/actionIcon",
+            "Name": "YeelightPluginAction",
+            "States": [
+                {
+                    "Image": "images/actionDefaultImage",
+                    "TitleAlignment": "middle",
+                    "FontSize": "16"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "Tooltip": "The first action for the YeelightPlugin Stream Deck plugin",
+            "UUID": "com.xander.yeelight.DefaultPluginAction"
+        }
+    ],
+    "Category": "Yeelight",
+    "CategoryIcon": "images/category/categoryIcon",
+    "Disabled": false,
+    "Author": "Alexander Shakhov",
+    "CodePathWin": "StreamDeckYeelightPlugin.exe",
+    "CodePathMac": "StreamDeckYeelightPlugin",
+    "PropertyInspectorPath": "property_inspector/property_inspector.html",
+    "Description": "Description of YeelightPlugin.",
+    "Name": "YeelightPlugin",
+    "Icon": "images/pluginIcon",
+    "Version": "1.0",
+    "SDKVersion": 2,
+    "Software": {
+        "MinimumVersion": "4.1"
+    },
+    "OS": [
+        {
+            "Platform": "mac",
+            "MinimumVersion": "10.11"
+        },
+        {
+            "Platform": "windows",
+            "MinimumVersion": "10"
+        }
+    ]
+}
