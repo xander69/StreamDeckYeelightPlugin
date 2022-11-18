@@ -1,11 +1,8 @@
-﻿// global websocket, used to communicate from/to Stream Deck software
-// as well as some info about our plugin, as sent by Stream Deck software 
-var websocket = null,
+﻿var websocket = null,
     uuid = null,
     inInfo = null,
     actionInfo = {},
     settingsModel = {
-        Counter: 0
     };
 
 function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, inActionInfo) {
@@ -14,35 +11,31 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
     inInfo = JSON.parse(inInfo);
     websocket = new WebSocket('ws://localhost:' + inPort);
 
-    //initialize values
-    if (actionInfo.payload.settings.settingsModel) {
-        settingsModel.Counter = actionInfo.payload.settings.settingsModel.Counter;
-    }
-
-    document.getElementById('txtCounterValue').value = settingsModel.Counter;
+    loadConfiguration(actionInfo.payload.settings.settingsModel);
 
     websocket.onopen = function () {
         var json = { event: inRegisterEvent, uuid: inUUID };
-        // register property inspector to Stream Deck
         websocket.send(JSON.stringify(json));
-
     };
 
     websocket.onmessage = function (evt) {
-        // Received message from Stream Deck
         var jsonObj = JSON.parse(evt.data);
         var sdEvent = jsonObj['event'];
         switch (sdEvent) {
             case "didReceiveSettings":
-                if (jsonObj.payload.settings.settingsModel.Counter) {
-                    settingsModel.Counter = jsonObj.payload.settings.settingsModel.Counter;
-                    document.getElementById('txtCounterValue').value = settingsModel.Counter;
-                }
+                loadConfiguration(jsonObj.payload.settings.settingsModel);
                 break;
             default:
                 break;
         }
     };
+}
+
+function loadConfiguration(payload) {
+    for (var key in payload) {
+        settingsModel[key] = payload[key];
+        document.getElementById(key).value = payload[key];
+    }
 }
 
 const setSettings = (value, param) => {
@@ -58,4 +51,3 @@ const setSettings = (value, param) => {
         websocket.send(JSON.stringify(json));
     }
 };
-

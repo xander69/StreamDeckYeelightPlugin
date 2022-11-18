@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>YeelightPlugin Property Inspector</title>
+    <link rel="stylesheet" href="css/sdpi.css">
+    <link rel="stylesheet" href="css/property-inspector.css">
+</head>
+<body>
+    <div class="sdpi-wrapper">
+
+        <div class="sdpi-item" id="percent_value">
+            <div class="sdpi-item-label">Percent Value</div>
+            <input id="txtPercentValue" class="sdpi-item-value" type="number" min="1" max="100" inputmode="numeric" pattern="[0-9]*" placeholder="Enter brightness percent" onchange="setSettings()" />
+        </div>
+
+    </div>
+
+    <script src="sdtools.common.js"></script>
+</body>
+</html>

@@ -1,18 +1,25 @@
 {
     "Actions": [
         {
-            "Icon": "images/actionIcon",
-            "Name": "YeelightPluginAction",
+            "Icon": "images/action/toggleOn",
+            "Name": "Toggle",
             "States": [
                 {
-                    "Image": "images/actionDefaultImage",
-                    "TitleAlignment": "middle",
-                    "FontSize": "16"
+                    "Name": "On",
+                    "Image": "images/action/toggleOn",
+                    "TitleAlignment": "top",
+                    "FontSize": "14"
+                },
+                {
+                    "Name": "Off",
+                    "Image": "images/action/toggleOff",
+                    "TitleAlignment": "top",
+                    "FontSize": "14"
                 }
             ],
             "SupportedInMultiActions": false,
-            "Tooltip": "The first action for the YeelightPlugin Stream Deck plugin",
-            "UUID": "com.xander.yeelight.DefaultPluginAction"
+            "Tooltip": "Turn on/off the device",
+            "UUID": "com.xander.yeelight.toggle"
         }
     ],
     "Category": "Yeelight",
@@ -21,10 +28,10 @@
     "Author": "Alexander Shakhov",
     "CodePathWin": "StreamDeckYeelightPlugin.exe",
     "CodePathMac": "StreamDeckYeelightPlugin",
-    "PropertyInspectorPath": "property_inspector/property_inspector.html",
+    "PropertyInspectorPath": "property_inspector/index.html",
     "Description": "Description of YeelightPlugin.",
     "Name": "YeelightPlugin",
-    "Icon": "images/pluginIcon",
+    "Icon": "images/category/categoryIcon",
     "Version": "1.0",
     "SDKVersion": 2,
     "Software": {

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "StreamDeckYeelightPlugin": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\xande\\AppData\\Roaming\\Elgato\\StreamDeck\\Plugins\\com.xander.yeelight.Toggl.sdPlugin"
+    }
+  }
+}
