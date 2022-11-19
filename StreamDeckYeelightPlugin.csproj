@@ -20,10 +20,12 @@
 	  <None Remove="images\action\brightControl.png" />
 	  <None Remove="images\action\brightControl@1x.png" />
 	  <None Remove="images\action\brightControl@2x.png" />
+	  <None Remove="images\action\brightControlIcon.png" />
 	  <None Remove="images\action\temperatureControl%401x.png" />
 	  <None Remove="images\action\temperatureControl%402x.png" />
 	  <None Remove="images\action\temperatureControl.png" />
 	  <None Remove="images\action\temperatureIcon.png" />
+	  <None Remove="images\action\toggleIcon.png" />
 	  <None Remove="images\action\toggleOff%401x.png" />
 	  <None Remove="images\action\toggleOff%402x.png" />
 	  <None Remove="images\action\toggleOff.png" />
@@ -67,6 +69,9 @@
 		<Content Include="images\action\brightControl%402x.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+		<Content Include="images\action\brightControlIcon.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 		<Content Include="images\action\temperatureControl.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
@@ -77,6 +82,9 @@
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="images\action\temperatureIcon.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="images\action\toggleIcon.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="images\action\toggleOff.png">

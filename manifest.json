@@ -1,7 +1,7 @@
 {
     "Actions": [
         {
-            "Icon": "images/action/toggleOn",
+            "Icon": "images/action/toggleIcon",
             "Name": "Toggle",
             "States": [
                 {
@@ -24,7 +24,25 @@
             "UUID": "com.xander.yeelight.toggle"
         },
         {
-            "Icon": "images/action/brightControl",
+            "Icon": "images/action/brightControlIcon",
+            "Name": "Brightness",
+            "States": [
+                {
+
+                    "Name": "Brightness",
+                    "Image": "images/action/brightControl",
+                    "Title": "50%",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/brightness.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Set specific brightness value",
+            "UUID": "com.xander.yeelight.brightness"
+        },
+        {
+            "Icon": "images/action/brightControlIcon",
             "Name": "Brightness Up",
             "States": [
                 {
@@ -42,7 +60,7 @@
             "UUID": "com.xander.yeelight.brightnessUp"
         },
         {
-            "Icon": "images/action/brightControl",
+            "Icon": "images/action/brightControlIcon",
             "Name": "Brightness Down",
             "States": [
                 {
@@ -60,22 +78,22 @@
             "UUID": "com.xander.yeelight.brightnessDown"
         },
         {
-            "Icon": "images/action/brightControl",
-            "Name": "Brightness",
+            "Icon": "images/action/temperatureIcon",
+            "Name": "Temperature",
             "States": [
                 {
 
-                    "Name": "Brightness",
-                    "Image": "images/action/brightControl",
-                    "Title": "50%",
+                    "Name": "Temperature",
+                    "Image": "images/action/temperatureControl",
+                    "Title": "4500K",
                     "TitleAlignment": "bottom",
                     "FontSize": "10"
                 }
             ],
-            "PropertyInspectorPath": "property_inspector/brightness.html",
+            "PropertyInspectorPath": "property_inspector/temperature.html",
             "SupportedInMultiActions": false,
-            "Tooltip": "Set specific brightness value",
-            "UUID": "com.xander.yeelight.brightness"
+            "Tooltip": "Set specific temperature value",
+            "UUID": "com.xander.yeelight.temperature"
         },
         {
             "Icon": "images/action/temperatureIcon",
@@ -112,24 +130,6 @@
             "SupportedInMultiActions": false,
             "Tooltip": "Temperature down control",
             "UUID": "com.xander.yeelight.temperatureDown"
-        },
-        {
-            "Icon": "images/action/temperatureIcon",
-            "Name": "Temperature",
-            "States": [
-                {
-
-                    "Name": "Temperature",
-                    "Image": "images/action/temperatureControl",
-                    "Title": "4500K",
-                    "TitleAlignment": "bottom",
-                    "FontSize": "10"
-                }
-            ],
-            "PropertyInspectorPath": "property_inspector/temperature.html",
-            "SupportedInMultiActions": false,
-            "Tooltip": "Set specific temperature value",
-            "UUID": "com.xander.yeelight.temperature"
         }
     ],
     "Category": "Yeelight",
