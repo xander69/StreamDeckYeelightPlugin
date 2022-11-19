@@ -1,16 +1,13 @@
-﻿using Serilog;
-using StreamDeckLib;
+﻿using StreamDeckLib;
 using StreamDeckLib.Messages;
 using StreamDeckYeelightPlugin.Models;
 using System;
-using System.IO;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace StreamDeckYeelightPlugin
 {
-    [ActionUuid(Uuid = "com.xander.yeelight.brightness")]
-    public class BrightnessAction : BaseStreamDeckActionWithSettingsModel<Models.BrightnessSettingsModel>
+    [ActionUuid(Uuid = "com.xander.yeelight.temperatureDown")]
+    public class TemperatureDownAction : BaseStreamDeckActionWithSettingsModel<Models.TemperatureSettingsModel>
     {
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {
@@ -21,8 +18,10 @@ namespace StreamDeckYeelightPlugin
                 return;
             }
 
-            int percent = Math.Min(BrightnessSettingsModel.MAX_VALUE, Math.Max(BrightnessSettingsModel.MIN_VALUE, SettingsModel.Percent));
-            await yeelight.SetBrightness(percent);
+            int oldTemperature = yeelight.GetProps().Temperature;
+            int newTemperature = Math.Max(TemperatureSettingsModel.MIN_VALUE, oldTemperature - SettingsModel.Step);
+            await yeelight.SetTemperature(newTemperature);
+
             await Manager.SetSettingsAsync(args.context, SettingsModel);
         }
 

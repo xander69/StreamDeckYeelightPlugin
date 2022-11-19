@@ -1,5 +1,6 @@
 ﻿using StreamDeckLib;
 using StreamDeckLib.Messages;
+using StreamDeckYeelightPlugin.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -18,10 +19,9 @@ namespace StreamDeckYeelightPlugin
             }
 
             int oldBrightness = yeelight.GetProps().Brightness;
-            int newBrightness = Math.Min(100, oldBrightness + SettingsModel.Step);
+            int newBrightness = Math.Min(BrightnessSettingsModel.MAX_VALUE, oldBrightness + SettingsModel.Step);
             await yeelight.SetBrightness(newBrightness);
 
-            await Manager.SetTitleAsync(args.context, $"+{SettingsModel.Step}%");
             await Manager.SetSettingsAsync(args.context, SettingsModel);
         }
 
@@ -32,7 +32,6 @@ namespace StreamDeckYeelightPlugin
 
         public override async Task OnWillAppear(StreamDeckEventPayload args)
         {
-            await Manager.SetTitleAsync(args.context, $"+{SettingsModel.Step}%");
             await base.OnWillAppear(args);
         }
     }

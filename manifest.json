@@ -76,6 +76,60 @@
             "SupportedInMultiActions": false,
             "Tooltip": "Set specific brightness value",
             "UUID": "com.xander.yeelight.brightness"
+        },
+        {
+            "Icon": "images/action/temperatureIcon",
+            "Name": "Temperature Up",
+            "States": [
+                {
+
+                    "Name": "Temperature",
+                    "Image": "images/action/temperatureControl",
+                    "Title": "+500K",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/temperatureStep.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Temperature up control",
+            "UUID": "com.xander.yeelight.temperatureUp"
+        },
+        {
+            "Icon": "images/action/temperatureIcon",
+            "Name": "Temperature Down",
+            "States": [
+                {
+
+                    "Name": "Temperature",
+                    "Image": "images/action/temperatureControl",
+                    "Title": "-500K",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/temperatureStep.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Temperature down control",
+            "UUID": "com.xander.yeelight.temperatureDown"
+        },
+        {
+            "Icon": "images/action/temperatureIcon",
+            "Name": "Temperature",
+            "States": [
+                {
+
+                    "Name": "Temperature",
+                    "Image": "images/action/temperatureControl",
+                    "Title": "4500K",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/temperature.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Set specific temperature value",
+            "UUID": "com.xander.yeelight.temperature"
         }
     ],
     "Category": "Yeelight",

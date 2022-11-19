@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace StreamDeckYeelightPlugin
 {
-    [ActionUuid(Uuid = "com.xander.yeelight.brightness")]
-    public class BrightnessAction : BaseStreamDeckActionWithSettingsModel<Models.BrightnessSettingsModel>
+    [ActionUuid(Uuid = "com.xander.yeelight.temperature")]
+    public class TemperatureAction : BaseStreamDeckActionWithSettingsModel<Models.TemperatureSettingsModel>
     {
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {
@@ -21,8 +21,8 @@ namespace StreamDeckYeelightPlugin
                 return;
             }
 
-            int percent = Math.Min(BrightnessSettingsModel.MAX_VALUE, Math.Max(BrightnessSettingsModel.MIN_VALUE, SettingsModel.Percent));
-            await yeelight.SetBrightness(percent);
+            int temperature = Math.Min(TemperatureSettingsModel.MAX_VALUE, Math.Max(TemperatureSettingsModel.MIN_VALUE, SettingsModel.Value));
+            await yeelight.SetTemperature(temperature);
             await Manager.SetSettingsAsync(args.context, SettingsModel);
         }
 

@@ -37,6 +37,12 @@ namespace StreamDeckYeelightPlugin
             return await device.SetBrightness(brightness);
         }
 
+        public async Task<bool> SetTemperature(int temperature)
+        {
+            Log.Debug($"Set temperature to {temperature}K");
+            return await device.SetColorTemperature(temperature);
+        }
+
         public static Yeelight? GetInstance(string address)
         {
             if (String.IsNullOrEmpty(address))
