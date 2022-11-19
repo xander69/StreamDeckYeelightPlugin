@@ -31,6 +31,22 @@ namespace StreamDeckYeelightPlugin
             return await device.Toggle();
         }
 
+        public async Task<bool> ToggleNightLight()
+        {
+            int activeMode = Convert.ToInt32(device.Properties["active_mode"]);
+            if (activeMode == 1)
+            {
+                Log.Debug("Toggle to daylight");
+                int ct = Convert.ToInt32(device.Properties["ct"]);
+                return await device.SetColorTemperature(ct);
+            }
+            else
+            {
+                Log.Debug("Toggle to nightlight");
+                return await device.SetPower(true, 0, YeelightAPI.Models.PowerOnMode.Night);
+            }
+        }
+
         public async Task<bool> SetBrightness(int brightness)
         {
             Log.Debug($"Set brightness to {brightness}%");

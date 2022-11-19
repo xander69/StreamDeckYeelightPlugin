@@ -130,6 +130,24 @@
             "SupportedInMultiActions": false,
             "Tooltip": "Temperature down control",
             "UUID": "com.xander.yeelight.temperatureDown"
+        },
+        {
+            "Icon": "images/action/nightLightIcon",
+            "Name": "Night Light",
+            "States": [
+                {
+
+                    "Name": "Night Light",
+                    "Image": "images/action/nightLight",
+                    "Title": "Night Light",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/index.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Toggle day/night light",
+            "UUID": "com.xander.yeelight.nightLight"
         }
     ],
     "Category": "Yeelight",
