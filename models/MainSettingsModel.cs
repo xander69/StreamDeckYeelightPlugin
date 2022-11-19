@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StreamDeckYeelightPlugin.Models
+﻿namespace StreamDeckYeelightPlugin.Models
 {
     public class MainSettingsModel
     {
-        public string Address { get; set; }
+        public string Address { get; set; } = "192.168.1.83";
     }
 }

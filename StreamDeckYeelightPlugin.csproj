@@ -17,6 +17,9 @@
 		<Exec Command="powershell -ExecutionPolicy Unrestricted -file &quot;$(ProjectDir)RegisterPluginAndStartStreamDeck.ps1&quot;" />
 	</Target>
 	<ItemGroup>
+	  <None Remove="images\action\brightControl.png" />
+	  <None Remove="images\action\brightControl@1x.png" />
+	  <None Remove="images\action\brightControl@2x.png" />
 	  <None Remove="images\action\toggleOff%401x.png" />
 	  <None Remove="images\action\toggleOff%402x.png" />
 	  <None Remove="images\action\toggleOff.png" />
@@ -27,6 +30,7 @@
 	  <None Remove="images\category\categoryIcon%402x.png" />
 	  <None Remove="images\category\categoryIcon.png" />
 	  <None Remove="property_inspector\brightness.html" />
+	  <None Remove="property_inspector\brightnessStep.html" />
 	</ItemGroup>
 
 	<!--Dependencies-->
@@ -48,6 +52,15 @@
 
 	<!--Deployment files that must go with the build executable -->
 	<ItemGroup>
+		<Content Include="images\action\brightControl.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="images\action\brightControl%401x.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="images\action\brightControl%402x.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 		<Content Include="images\action\toggleOff.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
@@ -80,6 +93,9 @@
 		</Content>
 		<Content Include="appsettings.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="property_inspector\brightnessStep.html">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
 

@@ -31,6 +31,12 @@ namespace StreamDeckYeelightPlugin
             return await device.Toggle();
         }
 
+        public async Task<bool> SetBrightness(int brightness)
+        {
+            Log.Debug($"Set brightness to {brightness}%");
+            return await device.SetBrightness(brightness);
+        }
+
         public static Yeelight? GetInstance(string address)
         {
             if (String.IsNullOrEmpty(address))

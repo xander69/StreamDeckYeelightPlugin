@@ -7,19 +7,75 @@
                 {
                     "Name": "On",
                     "Image": "images/action/toggleOn",
-                    "TitleAlignment": "top",
-                    "FontSize": "14"
+                    "Title": "on",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "12"
                 },
                 {
                     "Name": "Off",
                     "Image": "images/action/toggleOff",
-                    "TitleAlignment": "top",
-                    "FontSize": "14"
+                    "Title": "off",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
                 }
             ],
             "SupportedInMultiActions": false,
             "Tooltip": "Turn on/off the device",
             "UUID": "com.xander.yeelight.toggle"
+        },
+        {
+            "Icon": "images/action/brightControl",
+            "Name": "Brightness Up",
+            "States": [
+                {
+
+                    "Name": "Brightness",
+                    "Image": "images/action/brightControl",
+                    "Title": "+10%",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/brightnessStep.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Brightness up control",
+            "UUID": "com.xander.yeelight.brightnessUp"
+        },
+        {
+            "Icon": "images/action/brightControl",
+            "Name": "Brightness Down",
+            "States": [
+                {
+
+                    "Name": "Brightness",
+                    "Image": "images/action/brightControl",
+                    "Title": "-10%",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/brightnessStep.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Brightness down control",
+            "UUID": "com.xander.yeelight.brightnessDown"
+        },
+        {
+            "Icon": "images/action/brightControl",
+            "Name": "Brightness",
+            "States": [
+                {
+
+                    "Name": "Brightness",
+                    "Image": "images/action/brightControl",
+                    "Title": "50%",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/brightness.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Set specific brightness value",
+            "UUID": "com.xander.yeelight.brightness"
         }
     ],
     "Category": "Yeelight",
