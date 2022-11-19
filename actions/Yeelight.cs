@@ -47,10 +47,22 @@ namespace StreamDeckYeelightPlugin
             }
         }
 
+        public async Task<bool> ToggleAmbient()
+        {
+            Log.Debug("Toggle ambient light");
+            return await device.BackgroundToggle();
+        }
+
         public async Task<bool> SetBrightness(int brightness)
         {
             Log.Debug($"Set brightness to {brightness}%");
             return await device.SetBrightness(brightness);
+        }
+
+        public async Task<bool> SetAmbientBrightness(int brightness)
+        {
+            Log.Debug($"Set ambient light brightness to {brightness}%");
+            return await device.BackgroundSetBrightness(brightness);
         }
 
         public async Task<bool> SetTemperature(int temperature)

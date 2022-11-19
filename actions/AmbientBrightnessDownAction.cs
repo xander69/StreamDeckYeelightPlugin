@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace StreamDeckYeelightPlugin
 {
-    [ActionUuid(Uuid = "com.xander.yeelight.brightnessDown")]
-    public class BrightnessDownAction : BaseStreamDeckActionWithSettingsModel<Models.BrightnessSettingsModel>
+    [ActionUuid(Uuid = "com.xander.yeelight.ambientBrightnessDown")]
+    public class AmbientBrightnessDownAction : BaseStreamDeckActionWithSettingsModel<Models.AmbientBrightnessSettingsModel>
     {
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {
@@ -18,10 +18,9 @@ namespace StreamDeckYeelightPlugin
                 return;
             }
 
-            var props = yeelight.GetProps();
-            int oldBrightness = props.ActiveMode == 1 ? props.NightBrightness : props.Brightness;
-            int newBrightness = Math.Max(BrightnessSettingsModel.MIN_VALUE, oldBrightness - SettingsModel.Step);
-            await yeelight.SetBrightness(newBrightness);
+            int oldBrightness = yeelight.GetProps().BackgroundBrightness;
+            int newBrightness = Math.Max(AmbientBrightnessSettingsModel.MIN_VALUE, oldBrightness - SettingsModel.Step);
+            await yeelight.SetAmbientBrightness(newBrightness);
 
             await Manager.SetSettingsAsync(args.context, SettingsModel);
         }

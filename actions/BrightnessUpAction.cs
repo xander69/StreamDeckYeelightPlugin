@@ -1,4 +1,6 @@
-﻿using StreamDeckLib;
+﻿using McMaster.Extensions.CommandLineUtils;
+using Serilog;
+using StreamDeckLib;
 using StreamDeckLib.Messages;
 using StreamDeckYeelightPlugin.Models;
 using System;
@@ -18,7 +20,8 @@ namespace StreamDeckYeelightPlugin
                 return;
             }
 
-            int oldBrightness = yeelight.GetProps().Brightness;
+            var props = yeelight.GetProps();
+            int oldBrightness = props.ActiveMode == 1 ? props.NightBrightness : props.Brightness;
             int newBrightness = Math.Min(BrightnessSettingsModel.MAX_VALUE, oldBrightness + SettingsModel.Step);
             await yeelight.SetBrightness(newBrightness);
 

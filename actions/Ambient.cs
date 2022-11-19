@@ -1,13 +1,12 @@
-﻿using StreamDeckLib;
+﻿using Serilog;
+using StreamDeckLib;
 using StreamDeckLib.Messages;
-using StreamDeckYeelightPlugin.Models;
-using System;
 using System.Threading.Tasks;
 
 namespace StreamDeckYeelightPlugin
 {
-    [ActionUuid(Uuid = "com.xander.yeelight.brightnessDown")]
-    public class BrightnessDownAction : BaseStreamDeckActionWithSettingsModel<Models.BrightnessSettingsModel>
+    [ActionUuid(Uuid = "com.xander.yeelight.ambient")]
+    public class Ambient : BaseStreamDeckActionWithSettingsModel<Models.MainSettingsModel>
     {
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {
@@ -18,10 +17,7 @@ namespace StreamDeckYeelightPlugin
                 return;
             }
 
-            var props = yeelight.GetProps();
-            int oldBrightness = props.ActiveMode == 1 ? props.NightBrightness : props.Brightness;
-            int newBrightness = Math.Max(BrightnessSettingsModel.MIN_VALUE, oldBrightness - SettingsModel.Step);
-            await yeelight.SetBrightness(newBrightness);
+            await yeelight.ToggleAmbient();
 
             await Manager.SetSettingsAsync(args.context, SettingsModel);
         }

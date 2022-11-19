@@ -139,7 +139,7 @@
 
                     "Name": "Night Light",
                     "Image": "images/action/nightLight",
-                    "Title": "Night Light",
+                    "Title": "Night",
                     "TitleAlignment": "bottom",
                     "FontSize": "10"
                 }
@@ -148,6 +148,60 @@
             "SupportedInMultiActions": false,
             "Tooltip": "Toggle day/night light",
             "UUID": "com.xander.yeelight.nightLight"
+        },
+        {
+            "Icon": "images/action/ambientIcon",
+            "Name": "Ambient",
+            "States": [
+                {
+
+                    "Name": "Ambient",
+                    "Image": "images/action/ambient",
+                    "Title": "Ambient",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/index.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Toggle ambient light",
+            "UUID": "com.xander.yeelight.ambient"
+        },
+        {
+            "Icon": "images/action/ambientIcon",
+            "Name": "Ambient Brightness Up",
+            "States": [
+                {
+
+                    "Name": "Ambient Brightness Up",
+                    "Image": "images/action/ambient",
+                    "Title": "+10%",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/ambientStep.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Increase ambient brightness",
+            "UUID": "com.xander.yeelight.ambientBrightnessUp"
+        },
+        {
+            "Icon": "images/action/ambientIcon",
+            "Name": "Ambient Brightness Down",
+            "States": [
+                {
+
+                    "Name": "Ambient Brightness Down",
+                    "Image": "images/action/ambient",
+                    "Title": "-10%",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/ambientStep.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Decrease ambient brightness",
+            "UUID": "com.xander.yeelight.ambientBrightnessDown"
         }
     ],
     "Category": "Yeelight",
