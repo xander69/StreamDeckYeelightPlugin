@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>YeelightPlugin Property Inspector</title>
+    <link rel="stylesheet" href="css/sdpi.css">
+    <link rel="stylesheet" href="css/property-inspector.css">
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item" id="divAddress">
+            <div class="sdpi-item-label">IP address</div>
+            <input id="Address"
+                   class="sdpi-item-value"
+                   type="text"
+                   placeholder="e.g. 192.168.1.83"
+                   required
+                   autofocus
+                   onkeyup="setSettings(event.target.value, 'Address')" />
+        </div>
+        <div class="sdpi-item" id="divBrightness">
+            <div class="sdpi-item-label">Brightness</div>
+            <input id="Brightness"
+                   class="sdpi-item-value"
+                   type="number"
+                   required
+                   onkeyup="setSettings(event.target.value, 'Brightness')" />
+        </div>
+        <div class="sdpi-item" id="divTemperature">
+            <div class="sdpi-item-label">Temperature</div>
+            <input id="Temperature"
+                   class="sdpi-item-value"
+                   type="number"
+                   required
+                   onkeyup="setSettings(event.target.value, 'Temperature')" />
+        </div>
+        <div class="sdpi-item" id="divAmbient">
+            <div class="sdpi-item-label">Ambient</div>
+            <input id="Ambient"
+                   class="sdpi-item-value"
+                   type="number"
+                   required
+                   onkeyup="setSettings(event.target.value, 'Ambient')" />
+        </div>
+    </div>
+    <script src="js/property-inspector.js"></script>
+</body>
+</html>

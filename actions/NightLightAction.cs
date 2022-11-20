@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace StreamDeckYeelightPlugin
 {
     [ActionUuid(Uuid = "com.xander.yeelight.nightLight")]
-    public class NightLight : BaseStreamDeckActionWithSettingsModel<Models.MainSettingsModel>
+    public class NightLightAction : BaseStreamDeckActionWithSettingsModel<Models.MainSettingsModel>
     {
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {

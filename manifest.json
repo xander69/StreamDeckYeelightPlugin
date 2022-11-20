@@ -7,14 +7,14 @@
                 {
                     "Name": "On",
                     "Image": "images/action/toggleOn",
-                    "Title": "on",
+                    "Title": "On",
                     "TitleAlignment": "bottom",
                     "FontSize": "12"
                 },
                 {
                     "Name": "Off",
                     "Image": "images/action/toggleOff",
-                    "Title": "off",
+                    "Title": "Off",
                     "TitleAlignment": "bottom",
                     "FontSize": "10"
                 }
@@ -202,6 +202,24 @@
             "SupportedInMultiActions": false,
             "Tooltip": "Decrease ambient brightness",
             "UUID": "com.xander.yeelight.ambientBrightnessDown"
+        },
+        {
+            "Icon": "images/action/presetIcon",
+            "Name": "Preset",
+            "States": [
+                {
+
+                    "Name": "Preset",
+                    "Image": "images/action/preset",
+                    "Title": "Preset",
+                    "TitleAlignment": "bottom",
+                    "FontSize": "10"
+                }
+            ],
+            "PropertyInspectorPath": "property_inspector/preset.html",
+            "SupportedInMultiActions": false,
+            "Tooltip": "Configure your own preset",
+            "UUID": "com.xander.yeelight.preset"
         }
     ],
     "Category": "Yeelight",
